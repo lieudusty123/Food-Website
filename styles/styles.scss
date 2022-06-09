@@ -98,6 +98,10 @@ header {
             a.btn.btn-primary {
                 background-color: $green-color;
                 border: 1px solid darken($green-color, 20%);
+
+                &:hover {
+                    background-color: darken($green-color, 8%) !important;
+                }
             }
 
         }

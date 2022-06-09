@@ -99,4 +99,8 @@ header nav a:hover {
   background-color: #23CE6B;
   border: 1px solid #14773e;
 }
+
+.foodContainer .card .card-body a.btn.btn-primary:hover {
+  background-color: #1dab59 !important;
+}
 /*# sourceMappingURL=styles.css.map */
