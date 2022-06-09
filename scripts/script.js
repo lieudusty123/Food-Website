@@ -74,7 +74,7 @@ inputContainer.addEventListener('submit', (e) => {
 })
 
 let nextPage
-let APIdata = getAPIData().then(function (result) { return nextPage = result._links.next.href })
+// let APIdata = getAPIData().then(function (result) { return nextPage = result._links.next.href })
 
 $(window).scroll(function () {
     if ($(window).scrollTop() + $(window).height() == $(document).height()) {

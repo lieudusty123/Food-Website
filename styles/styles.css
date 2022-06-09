@@ -12,8 +12,10 @@ header {
   font-weight: 400;
 }
 
-header .nav-link {
-  padding: 0em 3rem 0em 3rem !important;
+@media screen and (min-width: 992px) {
+  header .nav-link {
+    padding: 0em 3rem 0em 3rem !important;
+  }
 }
 
 header nav a {
@@ -25,8 +27,20 @@ header nav a:hover {
   color: #70e7a2 !important;
 }
 
-#page-divider {
-  background-color: #F6F8FF;
+.navbar-toggler {
+  background-color: white !important;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navbar-toggler:focus {
+  color: transparent;
 }
 
 .foodContainer {

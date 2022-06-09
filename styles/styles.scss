@@ -29,8 +29,11 @@ header {
     font-size: 1.5rem;
     font-weight: 400;
 
-    .nav-link {
-        padding: 0em 3rem 0em 3rem !important;
+    @media screen and (min-width: 992px) {
+        .nav-link {
+            padding: 0em 3rem 0em 3rem !important;
+
+        }
 
     }
 
@@ -45,25 +48,16 @@ header {
     }
 }
 
-// #blobSvgLeft {
-//     width: 50%;
-//     display: inline;
-//     position: relative;
-//     left: -15px;
-//     top: -25px;
-// }
+.navbar-toggler {
+    background-color: white !important;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
 
-// #blobSvgRight {
-//     width: 50%;
-//     display: inline;
-//     position: absolute;
-//     right: 0%;
-//     z-index: 0;
-//     top: 0%;
-// }
+    &:focus {
+        color: transparent;
 
-#page-divider {
-    background-color: $white-color;
+    }
 }
 
 .foodContainer {
