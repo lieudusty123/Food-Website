@@ -109,4 +109,49 @@ input {
   -webkit-appearance: none;
   border-radius: 0;
 }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #F6F8FF;
+}
+
+#image {
+  width: 20rem;
+  margin: 1rem;
+  border: 2px solid #078007;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.322);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.322);
+}
+
+table {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+table tr:first-of-type {
+  background-color: #099c09;
+}
+
+table tr td:first-of-type {
+  width: .3%;
+}
+
+table td {
+  width: 20%;
+  border: 2px solid #078007;
+  padding: 1.3rem;
+}
 /*# sourceMappingURL=recipePage.css.map */

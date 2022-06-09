@@ -15,29 +15,8 @@ const getAPIData = async (searchTerm = foodArr[Math.floor(Math.random() * foodAr
         let data = await rawData.data
         console.log(data)
         cardContainerArr = []
-        for (const key in data.hits) {
-
-            function PageContent() {
-                return (
-                    <div className="card text-center" id={data.hits[key].recipe.uri}>
-                        <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img>
-                        <div className="card-body">
-                            <h5 className="card-title">{data.hits[key].recipe.label}</h5>
-                            <a href="./recipePage.html" className="btn btn-primary">Click Me!</a>
-                        </div>
-                    </div>
-                )
-            }
-
-            cardContainerArr.push(PageContent())
-        }
-        reactContainer.render(cardContainerArr)
-
-        container.addEventListener('click', (e) => {
-            if (e.target.className == "btn btn-primary") {
-                localStorage.setItem('recipe', e.target.parentElement.parentElement.id)
-            }
-        })
+        createCards(data)
+        clickMeButton(data)
         return data;
     }
     catch (e) {
@@ -75,7 +54,7 @@ inputContainer.addEventListener('submit', (e) => {
 
 let nextPage
 // comment if needed
-// let APIdata = getAPIData().then(function (result) { return nextPage = result._links.next.href })
+let APIdata = getAPIData().then(function (result) { return nextPage = result._links.next.href })
 
 $(window).scroll(function () {
     if ($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -83,38 +62,45 @@ $(window).scroll(function () {
             let nextData = await axios.get(nextPage)
             let data = await nextData.data
             console.log(data)
-            // cardContainerArr = []
-            for (const key in data.hits) {
-
-                function PageContent() {
-                    return (
-                        <div className="card text-center" id={data.hits[key].recipe.uri}>
-                            <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img>
-                            <div className="card-body">
-                                <h5 className="card-title">{data.hits[key].recipe.label}</h5>
-                                <a href="./recipePage.html" className="btn btn-primary">Click Me!</a>
-                            </div>
-                        </div>
-                    )
-                }
-
-                cardContainerArr.push(PageContent())
-            }
-            reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
-            reactContainer.render(cardContainerArr)
-
-            container.addEventListener('click', (e) => {
-                if (e.target.className == "btn btn-primary") {
-                    localStorage.setItem('recipe', e.target.parentElement.parentElement.id)
-                }
-            })
+            createCards(data)
+            clickMeButton(data)
             nextPage = data._links.next.href
-
         }
         getNewAPIData()
     }
 });
 
+function createCards(data) {
+    for (const key in data.hits) {
+        function PageContent() {
+            return (
+                <div className="card text-center" id={data.hits[key].recipe.uri}>
+                    <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img>
+                    <div className="card-body">
+                        <h5 className="card-title">{data.hits[key].recipe.label}</h5>
+                        <a href="./recipePage.html" className="btn btn-primary">Click Me!</a>
+                    </div>
+                </div>
+            )
+        }
 
+        cardContainerArr.push(PageContent())
+    }
+    reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
+    reactContainer.render(cardContainerArr)
+}
 
+function clickMeButton(data) {
+    console.log('inside func')
+    console.log(data)
+    container.addEventListener('click', (e) => {
+        if (e.target.className == "btn btn-primary") {
+            for (const key in data.hits) {
+                if (data.hits[key].recipe.uri == e.target.parentElement.parentElement.id) {
 
+                    localStorage.setItem('recipe', JSON.stringify(data.hits[key].recipe))
+                }
+            }
+        }
+    })
+}
