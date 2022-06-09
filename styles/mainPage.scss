@@ -16,6 +16,9 @@
     }
 }
 
+// html {
+//     overflow-x: hidden;
+// }
 
 body {
     background-color: $white-color;
@@ -86,9 +89,9 @@ body {
     width: 50%;
     display: inline;
     position: absolute;
-    right: -20%;
+    right: 0%;
     z-index: 0;
-    top: 0%;
+    top: 5%;
 }
 
 #page-divider {
@@ -116,5 +119,53 @@ body {
 
     @media only screen and (max-width: 800px) {
         // justify-content: space-around;
+    }
+}
+
+.foodContainer {
+    @include flexCenter(row);
+    background-color: $white-color;
+
+    .card {
+        margin: 3rem;
+        width: 300px;
+        height: 420px;
+        background-color: $black-color;
+        border: 2px solid $green-color;
+        overflow: hidden;
+
+        .card-img-top {
+            transition-duration: .4s;
+            transition-property: all;
+
+            &:hover {
+                transform: scale(1.007);
+                transform-origin: bottom center;
+                transition: all .4s;
+            }
+
+
+
+        }
+
+        .card-title {
+            overflow: hidden;
+            text-align: center;
+            font-size: auto;
+            font-weight: 600;
+            color: $green-color;
+        }
+
+        .card-body {
+            a.btn.btn-primary {
+                background-color: $green-color;
+                border: 1px solid darken($green-color, 20%);
+
+                &:hover {
+                    background-color: darken($green-color, 8%) !important;
+                }
+            }
+
+        }
     }
 }
