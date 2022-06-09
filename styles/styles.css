@@ -1,0 +1,88 @@
+html {
+  width: 100%;
+  background-color: #F6F8FF;
+  font-family: roboto;
+}
+
+header {
+  background-color: #272D2D;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+header .nav-link {
+  padding: 0em 3rem 0em 3rem !important;
+}
+
+header nav a {
+  color: #F6F8FF !important;
+  text-transform: uppercase;
+}
+
+header nav a:hover {
+  color: #70e7a2 !important;
+}
+
+#page-divider {
+  background-color: #F6F8FF;
+}
+
+.foodContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #F6F8FF;
+}
+
+.foodContainer .card {
+  margin: 3rem;
+  width: 300px;
+  height: 420px;
+  background-color: #272D2D;
+  border: 2px solid #23CE6B;
+  overflow: hidden;
+}
+
+.foodContainer .card .card-img-top {
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+  -webkit-transition-property: all;
+  transition-property: all;
+}
+
+.foodContainer .card .card-img-top:hover {
+  -webkit-transform: scale(1.007);
+          transform: scale(1.007);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.foodContainer .card .card-title {
+  overflow: hidden;
+  text-align: center;
+  font-size: auto;
+  font-weight: 600;
+  color: #23CE6B;
+}
+
+.foodContainer .card .card-body a.btn.btn-primary {
+  background-color: #23CE6B;
+  border: 1px solid #14773e;
+}
+/*# sourceMappingURL=styles.css.map */

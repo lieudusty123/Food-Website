@@ -1,0 +1,111 @@
+@import "./vars";
+
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+}
+
+@mixin theme($lightTheme: true) {
+    @if $lightTheme {
+        background-color: lighten($white-color, 100%);
+        color: darken($black-color, 100%);
+    }
+}
+
+html {
+    width: 100%;
+    background-color: $white-color;
+    font-family: $default-font;
+}
+
+header {
+    background-color: $black-color;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    .nav-link {
+        padding: 0em 3rem 0em 3rem !important;
+
+    }
+
+    nav a {
+        color: $white-color  !important;
+        text-transform: uppercase;
+
+
+        &:hover {
+            color: lighten($green-color, 20%) !important;
+        }
+    }
+}
+
+// #blobSvgLeft {
+//     width: 50%;
+//     display: inline;
+//     position: relative;
+//     left: -15px;
+//     top: -25px;
+// }
+
+// #blobSvgRight {
+//     width: 50%;
+//     display: inline;
+//     position: absolute;
+//     right: 0%;
+//     z-index: 0;
+//     top: 0%;
+// }
+
+#page-divider {
+    background-color: $white-color;
+}
+
+.foodContainer {
+    @include flexCenter(row);
+    background-color: $white-color;
+
+    .card {
+        margin: 3rem;
+        width: 300px;
+        height: 420px;
+        background-color: $black-color;
+        border: 2px solid $green-color;
+        overflow: hidden;
+
+        .card-img-top {
+            transition-duration: .4s;
+            transition-property: all;
+
+            &:hover {
+                transform: scale(1.007);
+                transform-origin: bottom center;
+                transition: all .4s;
+            }
+
+
+
+        }
+
+        .card-title {
+            overflow: hidden;
+            text-align: center;
+            font-size: auto;
+            font-weight: 600;
+            color: $green-color;
+        }
+
+        .card-body {
+            a.btn.btn-primary {
+                background-color: $green-color;
+                border: 1px solid darken($green-color, 20%);
+            }
+
+        }
+    }
+}

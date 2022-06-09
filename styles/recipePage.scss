@@ -1,0 +1,18 @@
+@import "./vars";
+@import "./resets";
+
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+}
+
+@mixin theme($lightTheme: true) {
+    @if $lightTheme {
+        background-color: lighten($white-color, 100%);
+        color: darken($black-color, 100%);
+    }
+}

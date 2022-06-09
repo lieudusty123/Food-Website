@@ -1,0 +1,100 @@
+@import "./vars";
+
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: $direction;
+}
+
+@mixin theme($lightTheme: true) {
+    @if $lightTheme {
+        background-color: lighten($white-color, 100%);
+        color: darken($black-color, 100%);
+    }
+}
+
+body {
+    background-color: $white-color;
+}
+
+.search {
+    @include flexCenter(row);
+    background-color: $black-color;
+    width: 100%;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+
+    .inputContainer {
+        display: flex;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.329);
+
+        input {
+            width: 30vw;
+            font-size: 2rem;
+            color: $green-color;
+            border: none;
+            background-color: $white-color;
+        }
+
+        #searchIconContainer {
+            @include flexCenter(row);
+            height: 3rem;
+            width: 3rem;
+            background-color: $green-color;
+            border: none;
+
+            #searchIcon {
+                height: 60%;
+                filter: brightness(10);
+
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    #filters {
+        &input {
+            margin: 1rem;
+        }
+
+        margin-top: 2rem;
+        color: $white-color;
+
+    }
+}
+
+// .moreResults {
+//     @include flexCenter(row);
+//     margin: 3rem auto;
+//     width: 78%;
+//     justify-content: space-between;
+//     background-color: $white-color;
+
+//     button {
+//         background-color: $black-color;
+//         color: $green-color;
+//         font-weight: 500;
+//         text-align: center;
+//         text-transform: uppercase;
+//         margin-top: 1rem;
+//         font-size: 1.3rem;
+//         width: 190px;
+//         height: 60px;
+//         border: none;
+//     }
+// }
+
+@media only screen and (max-width: 600px) {
+    .moreResults {
+        justify-content: center;
+    }
+}

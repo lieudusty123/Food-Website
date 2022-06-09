@@ -1,0 +1,94 @@
+body {
+  background-color: #F6F8FF;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #272D2D;
+  width: 100%;
+  padding: 8%;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  z-index: 3;
+}
+
+.search .inputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.329);
+          box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.329);
+}
+
+.search .inputContainer input {
+  width: 30vw;
+  font-size: 2rem;
+  color: #23CE6B;
+  border: none;
+  background-color: #F6F8FF;
+}
+
+.search .inputContainer #searchIconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 3rem;
+  width: 3rem;
+  background-color: #23CE6B;
+  border: none;
+}
+
+.search .inputContainer #searchIconContainer #searchIcon {
+  height: 60%;
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
+}
+
+.search .inputContainer #searchIconContainer:hover {
+  cursor: pointer;
+}
+
+.search #filters {
+  margin-top: 2rem;
+  color: #F6F8FF;
+}
+
+.search #filtersinput {
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .moreResults {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=mainPage.css.map */
