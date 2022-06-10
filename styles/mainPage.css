@@ -160,22 +160,28 @@ body {
   background-color: #272D2D;
   border: 2px solid #23CE6B;
   overflow: hidden;
+  /* [1] The container */
+  /* [2] Transition property for smooth transformation of images */
+  /* [3] Finally, transforming the image when container gets hovered */
 }
 
-.foodContainer .card .card-img-top {
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
-  -webkit-transition-property: all;
-  transition-property: all;
+.foodContainer .card .img-hover-zoom {
+  height: 300px;
+  /* [1.1] Set it as per your need */
+  overflow: hidden;
+  /* [1.2] Hide the overflowing of child elements */
 }
 
-.foodContainer .card .card-img-top:hover {
-  -webkit-transform: scale(1.007);
-          transform: scale(1.007);
-  -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
-  -webkit-transition: all .4s;
-  transition: all .4s;
+.foodContainer .card .img-hover-zoom img {
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.foodContainer .card .img-hover-zoom:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .foodContainer .card .card-title {

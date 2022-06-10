@@ -75,7 +75,10 @@ function createCards(data) {
         function PageContent() {
             return (
                 <div className="card text-center" id={data.hits[key].recipe.uri}>
-                    <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img>
+                    <div class="img-hover-zoom">
+                        <img src={data.hits[key].recipe.image} alt="..." className="card-img-top"></img>
+                    </div>
+                    {/* <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img> */}
                     <div className="card-body">
                         <h5 className="card-title">{data.hits[key].recipe.label}</h5>
                         <a href="./recipePage.html" className="btn btn-primary">Click Me!</a>

@@ -135,18 +135,22 @@ body {
         border: 2px solid $green-color;
         overflow: hidden;
 
-        .card-img-top {
-            transition-duration: .4s;
-            transition-property: all;
+        /* [1] The container */
+        .img-hover-zoom {
+            height: 300px;
+            /* [1.1] Set it as per your need */
+            overflow: hidden;
+            /* [1.2] Hide the overflowing of child elements */
+        }
 
-            &:hover {
-                transform: scale(1.007);
-                transform-origin: bottom center;
-                transition: all .4s;
-            }
+        /* [2] Transition property for smooth transformation of images */
+        .img-hover-zoom img {
+            transition: transform .3s ease;
+        }
 
-
-
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-zoom:hover img {
+            transform: scale(1.2);
         }
 
         .card-title {
