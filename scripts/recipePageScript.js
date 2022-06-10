@@ -2,8 +2,11 @@ let recipeData = window.localStorage.getItem("recipe");
 recipeData = JSON.parse(recipeData)
 console.log(recipeData)
 
-const recipeImg = document.querySelector('#image')
-recipeImg.src = `${recipeData.images.REGULAR.url}`
+document.querySelector('title').innerText = `${recipeData.label}`
+const siteLogo = document.querySelector('#pageLogo').href = `${recipeData.images.REGULAR.url}`
+
+
+const recipeImg = document.querySelector('#image').src = `${recipeData.images.REGULAR.url}`
 
 
 let recipeTable = document.querySelector('#recipeTable')
@@ -16,6 +19,7 @@ function fillTable() {
         let newData2 = newRow.insertCell(1)
 
         newData1.innerHTML = `${index}`
+        newData1.className = `indexData`
         newData2.innerHTML = `${element.text}`
         index = index + 1
     });

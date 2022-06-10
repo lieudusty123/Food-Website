@@ -145,15 +145,21 @@ table {
 
 table tr:first-of-type {
   background-color: #099c09;
+  color: #F6F8FF;
+  font-weight: 500;
 }
 
 table tr td:first-of-type {
-  width: .3%;
+  width: .2%;
 }
 
 table td {
   width: 20%;
   border: 2px solid #078007;
   padding: 1.3rem;
+}
+
+table .indexData {
+  text-align: center;
 }
 /*# sourceMappingURL=recipePage.css.map */
