@@ -110,10 +110,17 @@ input {
   border-radius: 0;
 }
 
+body {
+  background-color: #F6F8FF;
+}
+
 main {
+  margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -127,10 +134,18 @@ main {
   background-color: #F6F8FF;
 }
 
+#foodLabel {
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 2rem;
+  margin-left: 0;
+  color: #272D2D;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.158);
+}
+
 #image {
   width: 20rem;
-  margin: 1rem;
-  border: 2px solid #078007;
+  border: 2px solid #099c09;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.322);
           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.322);
@@ -149,8 +164,23 @@ table tr:first-of-type {
   font-weight: 500;
 }
 
+table tr:first-of-type td:first-of-type {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #099c09;
+  background-color: #F6F8FF;
+}
+
 table tr td:first-of-type {
   width: .2%;
+  font-weight: 500;
+  background-color: #099c09;
+  color: white;
+}
+
+table tr:nth-of-type(2n) {
+  background-color: rgba(9, 156, 9, 0.103);
 }
 
 table td {

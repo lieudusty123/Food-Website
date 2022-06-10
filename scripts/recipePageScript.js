@@ -3,10 +3,10 @@ recipeData = JSON.parse(recipeData)
 console.log(recipeData)
 
 document.querySelector('title').innerText = `${recipeData.label}`
+document.querySelector('#foodLabel').textContent = `${recipeData.label}`
 const siteLogo = document.querySelector('#pageLogo').href = `${recipeData.images.REGULAR.url}`
-
-
 const recipeImg = document.querySelector('#image').src = `${recipeData.images.REGULAR.url}`
+
 
 
 let recipeTable = document.querySelector('#recipeTable')
