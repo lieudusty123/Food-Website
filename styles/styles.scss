@@ -20,7 +20,50 @@ html {
     width: 100%;
     background-color: $white-color;
     font-family: $default-font;
+
+
 }
+
+.slide-out-tr {
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: $green-color;
+    position: fixed;
+    animation: slide-out-right .75s cubic-bezier(.55, .085, .68, .53) both;
+}
+
+@keyframes slide-out-right {
+    0% {
+        transform: translateX(0);
+        border-radius: 0%;
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translateX(2000px) translateY(-1000px);
+        border-radius: 100%;
+        visibility: hidden;
+        animation-timing-function: ease-out;
+    }
+}
+
+// #greenAnimation {
+
+// }
+
+// @keyframes mymove {
+//     from {
+//         opacity: 1;
+//         visibility: visible;
+//     }
+
+//     to {
+//         visibility: inherit;
+//         opacity: 0;
+//     }
+// }
 
 header {
     background-color: $black-color;

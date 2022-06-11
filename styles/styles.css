@@ -4,6 +4,54 @@ html {
   font-family: roboto;
 }
 
+.slide-out-tr {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #23CE6B;
+  position: fixed;
+  -webkit-animation: slide-out-right 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: slide-out-right 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    border-radius: 0%;
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(2000px) translateY(-1000px);
+            transform: translateX(2000px) translateY(-1000px);
+    border-radius: 100%;
+    visibility: hidden;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    border-radius: 0%;
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(2000px) translateY(-1000px);
+            transform: translateX(2000px) translateY(-1000px);
+    border-radius: 100%;
+    visibility: hidden;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
 header {
   background-color: #272D2D;
   padding-top: 1rem;
