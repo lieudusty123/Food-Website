@@ -10,8 +10,8 @@ html {
   z-index: 10;
   background-color: #23CE6B;
   position: fixed;
-  -webkit-animation: slide-out-right 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-          animation: slide-out-right 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: slide-out-right 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: slide-out-right 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @-webkit-keyframes slide-out-right {

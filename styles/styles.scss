@@ -30,7 +30,7 @@ html {
     z-index: 10;
     background-color: $green-color;
     position: fixed;
-    animation: slide-out-right .75s cubic-bezier(.55, .085, .68, .53) both;
+    animation: slide-out-right .55s cubic-bezier(.55, .085, .68, .53) both;
 }
 
 @keyframes slide-out-right {
