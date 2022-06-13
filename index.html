@@ -21,136 +21,134 @@
 
 <body>
     <div class="slide-out-tr"></div>
-    <header>
-        <a href="./index.html">
-            <img src="./srcs/logo.png" alt="Website Logo" id="navLogo">
-        </a>
-        <!-- <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                        <a class="nav-link disabled" href="#">Features</a>
-                        <a class="nav-link disabled" href="#">Pricing</a>
+    <div class="pageContent">
+        <header>
+            <a href="./index.html" id="navLogoContainer">
+                <img src="./srcs/logo.png" alt="Website Logo" id="navLogo">
+            </a>
+            <!-- <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link disabled" href="#">Features</a>
+                            <a class="nav-link disabled" href="#">Pricing</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav> -->
-    </header>
+            </nav> -->
+        </header>
 
-    <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvgLeft">
-        <g>
-            <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color: rgba(35, 206, 106, 0.623);"></stop>
-                    <stop offset="100%" style="stop-color: rgba(35, 206, 106, 0.623);"></stop>
-                </linearGradient>
-            </defs>
-            <path class="blob"
-                d="M400,311Q372,372,311,365Q250,358,195,359Q140,360,120,305Q100,250,130,205Q160,160,205,154Q250,148,317,132Q384,116,406,183Q428,250,400,311Z"
-                fill="none" stroke-width="5px" stroke="url(#gradient)"></path>
-        </g>
-    </svg>
-
-    <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" width="30%" id="blobSvgRight">
-        <g>
-            <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color: rgb(35, 206, 106);"></stop>
-                    <stop offset="100%" style="stop-color: rgb(82, 233, 145);"></stop>
-                </linearGradient>
-            </defs>
-            <path class="blob"
-                d="M375,292Q334,334,292,382Q250,430,172.5,417.5Q95,405,138.5,327.5Q182,250,148.5,182.5Q115,115,182.5,105.5Q250,96,320,103Q390,110,403,180Q416,250,375,292Z"
-                fill="none" stroke-width="5px" stroke="url(#gradient)"></path>
-        </g>
-    </svg>
-
-    <section class="search">
-        <form action="get" class="inputContainer">
-            <input type="text" name="searchFood" id="searchInput">
-            <button id="searchIconContainer">
-                <img src="./srcs/searchIcon.jpg" id="searchIcon">
-            </button>
-        </form>
-        <ul id="filters" class="hidden">
-
-            <li>
-                <input type="checkbox" id="alcohol-cocktail" class="searchTerm" data-category="health">
-                <label for="alcohol-cocktail">alcohol-cocktail</label>
-            </li>
-            <li>
-                <input type="checkbox" id="egg-free" class="searchTerm" data-category="health">
-                <label for="egg-free">egg-free</label>
-            </li>
-            <li>
-                <input type="checkbox" id="fish-free" class="searchTerm" data-category="health">
-                <label for="fish-free">fish-free</label>
-            </li>
-            <li>
-                <input type="checkbox" id="gluten-free" class="searchTerm" data-category="health">
-                <label for="gluten-free">gluten-free</label>
-            </li>
-            <li>
-                <input type="checkbox" id="kosher" class="searchTerm" data-category="health">
-                <label for="kosher">kosher</label>
-            </li>
-            <li>
-                <input type="checkbox" id="vegan" class="searchTerm" data-category="health">
-                <label for="vegan">Vegan</label>
-            </li>
-            <li>
-                <input type="checkbox" id="vegetarian" class="searchTerm" data-category="health">
-                <label for="vegetarian">vegetarian</label>
-            </li>
-            <li>
-                <input type="checkbox" id="low-sugar" class="searchTerm" data-category="health">
-                <label for="low-sugar">low-sugar</label>
-            </li>
-            <li>
-                <input type="checkbox" id="low-fat-abs" class="searchTerm" data-category="health">
-                <label for="low-fat-abs">low-fat</label>
-            </li>
-
-        </ul>
-    </section>
-
-    <div style="overflow: hidden;" id="page-divider">
-        <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
-            style="fill: #272D2D; width: 169%; height: 85px;">
-            <path
-                d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
-                opacity=".25" />
-            <path
-                d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
-                opacity=".5" />
-            <path
-                d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
+        <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvgLeft">
+            <g>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color: rgba(35, 206, 106, 0.623);"></stop>
+                        <stop offset="100%" style="stop-color: rgba(35, 206, 106, 0.623);"></stop>
+                    </linearGradient>
+                </defs>
+                <path class="blob"
+                    d="M400,311Q372,372,311,365Q250,358,195,359Q140,360,120,305Q100,250,130,205Q160,160,205,154Q250,148,317,132Q384,116,406,183Q428,250,400,311Z"
+                    fill="none" stroke-width="5px" stroke="url(#gradient)"></path>
+            </g>
         </svg>
+
+        <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="30%" id="blobSvgRight">
+            <g>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color: rgb(35, 206, 106);"></stop>
+                        <stop offset="100%" style="stop-color: rgb(82, 233, 145);"></stop>
+                    </linearGradient>
+                </defs>
+                <path class="blob"
+                    d="M375,292Q334,334,292,382Q250,430,172.5,417.5Q95,405,138.5,327.5Q182,250,148.5,182.5Q115,115,182.5,105.5Q250,96,320,103Q390,110,403,180Q416,250,375,292Z"
+                    fill="none" stroke-width="5px" stroke="url(#gradient)"></path>
+            </g>
+        </svg>
+
+        <section class="search">
+            <form action="get" class="inputContainer">
+                <input type="text" name="searchFood" id="searchInput">
+                <button id="searchIconContainer">
+                    <img src="./srcs/searchIcon.jpg" id="searchIcon">
+                </button>
+            </form>
+            <ul id="filters" class="hidden">
+
+                <li>
+                    <input type="checkbox" id="alcohol-cocktail" class="searchTerm" data-category="health">
+                    <label for="alcohol-cocktail">alcohol-cocktail</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="egg-free" class="searchTerm" data-category="health">
+                    <label for="egg-free">egg-free</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="fish-free" class="searchTerm" data-category="health">
+                    <label for="fish-free">fish-free</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="gluten-free" class="searchTerm" data-category="health">
+                    <label for="gluten-free">gluten-free</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="kosher" class="searchTerm" data-category="health">
+                    <label for="kosher">kosher</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="vegan" class="searchTerm" data-category="health">
+                    <label for="vegan">Vegan</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="vegetarian" class="searchTerm" data-category="health">
+                    <label for="vegetarian">vegetarian</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="low-sugar" class="searchTerm" data-category="health">
+                    <label for="low-sugar">low-sugar</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="low-fat-abs" class="searchTerm" data-category="health">
+                    <label for="low-fat-abs">low-fat</label>
+                </li>
+
+            </ul>
+        </section>
+
+        <div style="overflow: hidden;" id="page-divider">
+            <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
+                style="fill: #272D2D; width: 169%; height: 85px;">
+                <path
+                    d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
+                    opacity=".25" />
+                <path
+                    d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
+                    opacity=".5" />
+                <path
+                    d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
+            </svg>
+        </div>
+
+        <main class="foodContainer"></main>
     </div>
 
-    <main class="foodContainer"></main>
-    <!-- <div class="moreResults">
-        <button id="previous">Previous</button>
-        <button id="next">Next</button>
-    </div> -->
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./scripts/script.js" type="text/babel"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9709502905541008"
-        crossorigin="anonymous"></script> -->
 </body>
 
 </html>

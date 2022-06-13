@@ -1,5 +1,7 @@
 localStorage.clear()
 
+
+
 const container = document.querySelector('.foodContainer')
 let reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
 let cardContainerArr = []
@@ -10,7 +12,6 @@ const getAPIData = async (searchTerm = foodArr[Math.floor(Math.random() * foodAr
     try {
         let axiosLink = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchTerm}&app_id=d607b69f&app_key=abf5d3e788d02d0d70cb47ff0ec906c1&`
         searchFilter.forEach(e => { axiosLink = `${axiosLink}&${e[0]}=${e[1]}` })
-        console.log(axiosLink)
         let rawData = await axios.get(axiosLink)
         let data = await rawData.data
         console.log(data)
@@ -70,18 +71,18 @@ $(window).scroll(function () {
     }
 });
 
+reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
 function createCards(data) {
     for (const key in data.hits) {
         function PageContent() {
             return (
                 <div className="card text-center" id={data.hits[key].recipe.uri}>
-                    <div class="img-hover-zoom">
-                        <img src={data.hits[key].recipe.image} alt="..." className="card-img-top"></img>
-                    </div>
-                    {/* <img src={data.hits[key].recipe.image} className="card-img-top" alt="..."></img> */}
+                    <a href="./recipePage.html" className="img-hover-zoom transfer">
+                        <img src={data.hits[key].recipe.image} alt="..." className="card-img-top transfer"></img>
+                    </a>
                     <div className="card-body">
                         <h5 className="card-title">{data.hits[key].recipe.label}</h5>
-                        <a href="./recipePage.html" className="btn btn-primary">Click Me!</a>
+                        <a href="./recipePage.html" className="btn btn-primary transfer">Click Me!</a>
                     </div>
                 </div>
             )
@@ -89,15 +90,12 @@ function createCards(data) {
 
         cardContainerArr.push(PageContent())
     }
-    reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
     reactContainer.render(cardContainerArr)
 }
 
 function clickMeButton(data) {
-    console.log('inside func')
-    console.log(data)
     container.addEventListener('click', (e) => {
-        if (e.target.className == "btn btn-primary") {
+        if (e.target.classList.contains("transfer")) {
             for (const key in data.hits) {
                 if (data.hits[key].recipe.uri == e.target.parentElement.parentElement.id) {
 

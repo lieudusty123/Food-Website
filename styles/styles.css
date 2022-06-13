@@ -10,45 +10,131 @@ html {
   z-index: 10;
   background-color: #23CE6B;
   position: fixed;
-  -webkit-animation: slide-out-right 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-          animation: slide-out-right 0.55s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  -webkit-animation: slide-out 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+          animation: slide-out 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-@-webkit-keyframes slide-out-right {
+@-webkit-keyframes slide-in-out {
   0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    border-radius: 0%;
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
     opacity: 1;
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
+  30% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    border-radius: 0;
+  }
+  70% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    border-radius: 0;
+  }
   100% {
-    -webkit-transform: translateX(2000px) translateY(-1000px);
-            transform: translateX(2000px) translateY(-1000px);
-    border-radius: 100%;
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
     visibility: hidden;
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
   }
 }
 
-@keyframes slide-out-right {
+@keyframes slide-in-out {
   0% {
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  30% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    border-radius: 0%;
+    border-radius: 0;
+  }
+  70% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    border-radius: 0;
+  }
+  100% {
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    visibility: hidden;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
     opacity: 1;
     -webkit-animation-timing-function: ease-in;
             animation-timing-function: ease-in;
   }
   100% {
-    -webkit-transform: translateX(2000px) translateY(-1000px);
-            transform: translateX(2000px) translateY(-1000px);
-    border-radius: 100%;
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
     visibility: hidden;
     -webkit-animation-timing-function: ease-out;
             animation-timing-function: ease-out;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(-1900px);
+            transform: translateX(-1900px);
+    visibility: hidden;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+body {
+  background-color: #F6F8FF;
+}
+
+@-webkit-keyframes body-opacity {
+  0% {
+    opacity: 0%;
+  }
+  69% {
+    opacity: 0%;
+  }
+  70% {
+    opacity: 100%;
+  }
+}
+
+@keyframes body-opacity {
+  0% {
+    opacity: 0%;
+  }
+  69% {
+    opacity: 0%;
+  }
+  70% {
+    opacity: 100%;
   }
 }
 
@@ -86,13 +172,17 @@ header a {
   }
 }
 
-#navLogo {
+#navLogoContainer {
+  z-index: 1;
+}
+
+#navLogoContainer #navLogo {
   width: 100px;
   -webkit-filter: brightness(12);
           filter: brightness(12);
 }
 
-#navLogo:hover {
+#navLogoContainer #navLogo:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

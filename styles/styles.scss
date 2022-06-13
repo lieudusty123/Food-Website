@@ -30,40 +30,80 @@ html {
     z-index: 10;
     background-color: $green-color;
     position: fixed;
-    animation: slide-out-right .55s cubic-bezier(.55, .085, .68, .53) both;
+    animation: slide-out .6s cubic-bezier(.55, .085, .68, .53) both;
 }
 
-@keyframes slide-out-right {
+@keyframes slide-in-out {
     0% {
-        transform: translateX(0);
-        border-radius: 0%;
+        transform: translateX(-1900px);
+        // transform: translateX(0);
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
         opacity: 1;
         animation-timing-function: ease-in;
     }
 
+    30% {
+        transform: translateX(0);
+        border-radius: 0;
+    }
+
+    70% {
+        transform: translateX(0);
+        border-radius: 0;
+    }
+
     100% {
-        transform: translateX(2000px) translateY(-1000px);
-        border-radius: 100%;
+        transform: translateX(-1900px);
+        // border-radius: 3rem;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
         visibility: hidden;
         animation-timing-function: ease-out;
     }
 }
 
-// #greenAnimation {
+@keyframes slide-out {
+    0% {
+        transform: translateX(0px);
+        // border-top-right-radius: 3rem;
+        // border-bottom-right-radius: 3rem;
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
 
+    100% {
+        transform: translateX(-1900px);
+        // border-top-right-radius: 3rem;
+        // border-bottom-right-radius: 3rem;
+        visibility: hidden;
+        animation-timing-function: ease-out;
+    }
+}
+
+body {
+    background-color: $white-color;
+}
+
+// .pageContent {
+//     animation: body-opacity .7s cubic-bezier(.55, .085, .68, .53) both;
 // }
 
-// @keyframes mymove {
-//     from {
-//         opacity: 1;
-//         visibility: visible;
-//     }
+@keyframes body-opacity {
+    0% {
+        opacity: 0%;
 
-//     to {
-//         visibility: inherit;
-//         opacity: 0;
-//     }
-// }
+    }
+
+    69% {
+        opacity: 0%;
+    }
+
+    70% {
+        opacity: 100%;
+    }
+}
+
 
 header {
     background-color: $black-color;
@@ -92,36 +132,16 @@ header {
     }
 }
 
-//     nav a {
-//         color: $white-color  !important;
-//         text-transform: uppercase;
-//         z-index: 1;
+#navLogoContainer {
 
-//         &:hover {
-//             color: lighten($green-color, 20%) !important;
-//         }
+    z-index: 1;
 
+    #navLogo {
+        width: 100px;
+        filter: brightness(12);
 
-//     }
-// }
-
-// .navbar-toggler {
-//     background-color: white !important;
-//     z-index: 1;
-//     display: flex;
-//     flex-direction: row;
-
-//     &:focus {
-//         color: transparent;
-
-//     }
-// }
-
-#navLogo {
-    width: 100px;
-    filter: brightness(12);
-
-    &:hover {
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
