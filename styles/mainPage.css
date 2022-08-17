@@ -36,6 +36,7 @@ body {
 }
 
 .search .inputContainer input {
+  height: 3rem;
   width: 30vw;
   font-size: 2rem;
   color: #23CE6B;
@@ -72,14 +73,14 @@ body {
   border: none;
 }
 
+.search .inputContainer #searchIconContainer:hover {
+  cursor: pointer;
+}
+
 .search .inputContainer #searchIconContainer #searchIcon {
   height: 60%;
   -webkit-filter: brightness(10);
           filter: brightness(10);
-}
-
-.search .inputContainer #searchIconContainer:hover {
-  cursor: pointer;
 }
 
 .search #filters {
@@ -229,5 +230,39 @@ body {
 
 .foodContainer .card .card-body a.btn.btn-primary:hover {
   background-color: #1dab59 !important;
+}
+
+#loading-icon {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50vw - 25px);
+  width: 50px;
+  -webkit-animation: loop 1s infinite;
+          animation: loop 1s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(1turn);
+            transform: rotateZ(1turn);
+  }
+}
+
+@keyframes loop {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(1turn);
+            transform: rotateZ(1turn);
+  }
 }
 /*# sourceMappingURL=mainPage.css.map */

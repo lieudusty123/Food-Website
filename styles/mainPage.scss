@@ -27,13 +27,12 @@ body {
         display: flex;
         box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.329);
 
-
-
         input {
             @media only screen and (max-width: 500px) {
                 width: 50vw;
             }
 
+            height: 3rem;
             width: 30vw;
             font-size: 2rem;
             color: $green-color;
@@ -49,15 +48,17 @@ body {
             background-color: $green-color;
             border: none;
 
+            &:hover {
+                cursor: pointer;
+            }
+
             #searchIcon {
                 height: 60%;
                 filter: brightness(10);
 
             }
 
-            &:hover {
-                cursor: pointer;
-            }
+
         }
 
     }
@@ -183,6 +184,26 @@ body {
                 }
             }
 
+        }
+    }
+}
+
+#loading-icon {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50vw - 25px);
+    width: 50px;
+    animation: loop 1s infinite;
+    animation-timing-function: linear;
+
+    @keyframes loop {
+        0% {
+            transform: rotateZ(0);
+        }
+
+        100% {
+            transform: rotateZ(1turn);
         }
     }
 }
