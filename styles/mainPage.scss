@@ -9,12 +9,6 @@
     flex-direction: $direction;
 }
 
-@mixin theme($lightTheme: true) {
-    @if $lightTheme {
-        background-color: lighten($white-color, 100%);
-        color: darken($black-color, 100%);
-    }
-}
 
 body {
     background-color: $black-color;
@@ -107,10 +101,24 @@ body {
     .moreResults {
         justify-content: center;
     }
+
+    #filters {
+        width: 90vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .moreResults {
+        justify-content: center;
+    }
+
+    #filters {
+        width: 50vw;
+
+    }
 }
 
 #filters {
-    width: 50vw;
     list-style: none;
     display: flex;
     flex-wrap: wrap;

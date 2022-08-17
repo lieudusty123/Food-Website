@@ -1,6 +1,6 @@
 let recipeData = window.localStorage.getItem("recipe");
 recipeData = JSON.parse(recipeData)
-console.log(recipeData)
+// console.log(recipeData)
 
 document.querySelector('title').innerText = `${recipeData.label}`
 document.querySelector('#foodLabel').textContent = `${recipeData.label}`
@@ -13,7 +13,7 @@ let recipeTable = document.querySelector('#recipeTable')
 function fillTable() {
     let index = 1;
     recipeData.ingredients.forEach(element => {
-        console.log(element)
+        // console.log(element)
         let newRow = recipeTable.insertRow(index)
         let newData1 = newRow.insertCell(0)
         let newData2 = newRow.insertCell(1)

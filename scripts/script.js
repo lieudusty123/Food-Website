@@ -1,12 +1,9 @@
 localStorage.clear()
 
-
-
 const container = document.querySelector('.foodContainer')
-let reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
 let cardContainerArr = []
 
-const foodArr = ['Hamburger', 'beef', 'pork', 'chicken', 'soup', 'pie', 'pasta', 'ravioli', 'linguini', 'cake', 'cookie', 'fries', 'chips', 'salad', 'noodles', 'sandwich', 'rice']
+const foodArr = ['Hamburger', 'beef', 'pork', 'chicken', 'soup', 'pie', 'pasta', 'ravioli', 'linguini', 'cake', 'cookie', 'fries', 'chips', 'salad', 'noodles', 'sandwich', 'rice', 'sushi']
 
 const getAPIData = async (searchTerm = foodArr[Math.floor(Math.random() * foodArr.length)], searchFilter = []) => {
     try {
@@ -14,14 +11,14 @@ const getAPIData = async (searchTerm = foodArr[Math.floor(Math.random() * foodAr
         searchFilter.forEach(e => { axiosLink = `${axiosLink}&${e[0]}=${e[1]}` })
         let rawData = await axios.get(axiosLink)
         let data = await rawData.data
-        console.log(data)
+        // console.log(data)
         cardContainerArr = []
         createCards(data)
         clickMeButton(data)
         return data;
     }
     catch (e) {
-        console.log(e)
+        // console.log(e)
     }
 }
 
@@ -39,7 +36,7 @@ let itemArr = []
 // search and filters
 inputContainer.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(searchInput.value)
+    // console.log(searchInput.value)
     searchTerms.forEach((current) => {
         if (current.checked && itemArr.indexOf(itemArr) == -1) {
             itemArr.push([current.dataset.category, current.id])
@@ -48,7 +45,7 @@ inputContainer.addEventListener('submit', (e) => {
             itemArr.pop([current.dataset.category, current.id])
         }
     })
-    console.log(itemArr)
+    // console.log(itemArr)
     getAPIData(searchInput.value, itemArr)
     itemArr = []
 })
@@ -62,7 +59,6 @@ $(window).scroll(function () {
         let getNewAPIData = async () => {
             let nextData = await axios.get(nextPage)
             let data = await nextData.data
-            console.log(data)
             createCards(data)
             clickMeButton(data)
             nextPage = data._links.next.href
@@ -71,26 +67,32 @@ $(window).scroll(function () {
     }
 });
 
-reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
+let reactContainer = ReactDOM.createRoot(document.querySelector('.foodContainer'))
+function RenderThis() {
+    return (
+        [mappedItems]
+    )
+}
+let mappedItems = []
 function createCards(data) {
     for (const key in data.hits) {
-        function PageContent() {
-            return (
-                <div className="card text-center" id={data.hits[key].recipe.uri}>
-                    <a href="./recipePage.html" className="img-hover-zoom transfer">
-                        <img src={data.hits[key].recipe.image} alt="..." className="card-img-top transfer"></img>
-                    </a>
-                    <div className="card-body">
-                        <h5 className="card-title">{data.hits[key].recipe.label}</h5>
-                        <a href="./recipePage.html" className="btn btn-primary transfer">Click Me!</a>
-                    </div>
-                </div>
-            )
-        }
-
-        cardContainerArr.push(PageContent())
+        cardContainerArr.push(data.hits[key])
     }
-    reactContainer.render(cardContainerArr)
+    mappedItems = cardContainerArr.map(card => {
+        return (
+            <div className="card text-center" id={card.recipe.uri} key={card.recipe.uri}>
+                <a href="./recipePage.html" className="img-hover-zoom transfer">
+                    <img src={card.recipe.image} alt="..." className="card-img-top transfer"></img>
+                </a>
+                <div className="card-body">
+                    <h5 className="card-title">{card.recipe.label}</h5>
+                    <a href="./recipePage.html" className="btn btn-primary transfer">Click Me!</a>
+                </div>
+            </div>
+        )
+    })
+    RenderThis()
+    reactContainer.render(<RenderThis />)
 }
 
 function clickMeButton(data) {

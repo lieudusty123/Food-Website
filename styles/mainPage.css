@@ -122,10 +122,23 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  #filters {
+    width: 90vw;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .moreResults {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #filters {
+    width: 50vw;
+  }
 }
 
 #filters {
-  width: 50vw;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
